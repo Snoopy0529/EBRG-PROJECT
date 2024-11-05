@@ -67,26 +67,52 @@
     </div>
     
     <div id="announcements" class="content-div">
-        <div id="anncts">
-            <img src="bg_img/sample_img.jpg" alt="sample_img" class="img">
-            <h3 class="A1">Announcement No.1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi
-                ut aliquip ex ea commodo consequat
-                Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
-                </p>
-        </div>
-        <div id="anncts2"></div>
+
+    <div id="AnnouncementContainer">
+    <!-- Announcements will be dynamically loaded here -->
     </div>
+    <div style="height: 110px;"></div>
+
+    <script>
+    function loadAnnouncements() {
+    fetch('announcement-content.php')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('AnnouncementContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading announcements:', error));
+    }
+
+    // Initial load of announcements on page load
+    loadAnnouncements();
+
+    </script>
+    </div>
+
     <div id="events" class="content-div" style="display: none;">
-        <div id="evnts"></div>
-        <div id="evnts2"></div>
+    <div id="EventsContainer">
+    <!-- Events will be dynamically loaded here -->
     </div>
+    <div style="height: 110px;"></div>
+
+    <script>
+    function loadEvents() {
+    fetch('event-content.php')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('EventsContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading announcements:', error));
+    }
+
+    // Initial load of announcements on page load
+    loadEvents();
+
+    </script>
+    </div>
+
+    </div>
+
     <div id="services" class="content-div" style="display: none;">
         <div id="serv">
             <h4 class="type">Type of Service:</h4>
@@ -131,5 +157,6 @@
        <script src="hamburgermenu.js"></script>
        <script src="AESH.js"></script>
        <script src="services.js"></script>
+
 </body>
 </html>
