@@ -116,35 +116,38 @@
     <div id="services" class="content-div" style="display: none;">
         <div id="serv">
             <h4 class="type">Type of Service:</h4>
-            <select id="dropdown" onchange="showField()">
-                <option value="">--Select an option--</option>
-                <option value="val1">Certificate of Indigency</option>
-                <option value="val2">Certificate of Residency</option>
-                <option value="val3">Certificate of First Time Job Seeker</option>
-                <option value="val3">Certificate of Job Absence</option>
-                <option value="val3">Certificate of Solo Parent</option>
-                <option value="val3">Barangay Clearance</option>
-                <option value="val3">Fencing Clearance</option>
-                <option value="val3">Building Clearance</option>
-                <option value="val3">Order of Payment</option>
-                <option value="val3">Electricity Installation Clearance</option>
-                <option value="val3">Daycare Admission Shortlistin</option>
-            </select>
 
-        <div id="div1" class="val-div" style="display: none;">
-            <h4 class="detail">Details:</h4>
-            <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
-            <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
-            <input type="text" class="age" name="age" placeholder="Age" required>
-            <input type="file" id="image" name="image" placeholder="ID Picture" required>
-            <label for="image" class="select" id="fileLabel">
-                <strong><i class="fas fa-upload"></i> &nbsp; ID Pciture</strong>
-            </label>
+<!-- START OF DROPDOWN -->
+
+    <div class="custom-dropdown">
+        <div class="selected-option" id="selected-option" onclick="toggleDropdown()">
+        -- Select Barangay Services -- <span class="dropdown-icon">&#9662;</span> <!-- Dropdown arrow -->
         </div>
-        <div id="div2" class="val-div" style="display: none;">Content for Option 2</div>
-        <div id="div3" class="val-div" style="display: none;">Content for Option 3</div>
+
+    <div class="dropdown-options" id="dropdown-options" style="display: none;">
+        
+        <div class="dropdown-option certificates-option" onmouseover="showSubmenu('certificates-submenu')">
+            Certificates
+            <!-- Submenu for Certificates -->
+            <div class="submenu" id="certificates-submenu" style="display: none;">
+                <div class="submenu-option" onclick="selectOption('Certificate of Indigency'); showCertificateDetails('indigency')">Certificate of Indigency</div>
+                <div class="submenu-option" onclick="selectOption('Certificate of Residency'); showCertificateDetails('residency')">Certificate of Residency</div>
+                <div class="submenu-option" onclick="selectOption('Certificate of Solo Parent'); showCertificateDetails('solo_parent')">Certificate of Solo Parent</div>
+            </div>
         </div>
+        <div class="dropdown-option" onclick="selectOption('Health Services & Medications'); showField('health_services')">Health Services & Medications</div>
+        <div class="dropdown-option" onclick="selectOption('Daycare Admission Shortlisting'); showField('daycare')">Daycare Admission Shortlisting</div>
     </div>
+
+    </div>
+
+    <div id="div1" class="val-div" style="display: none;">
+    <!-- Content will be updated here based on the selected submenu option -->
+    </div>
+
+<!-- END OF DROPDOWN -->
+
+
     <div id="hotlines" class="content-div" style="display: none;">
         <div id="hotl"></div>
         <div id="hotl2"></div>
