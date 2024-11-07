@@ -46,7 +46,6 @@
             </ul>
         </nav>
         <div class="footer_center">
-            <img src="logo/logo.png" alt="EBRGY logo">
              <p>Copyright © 2024. All Rights Reserved</p>
         </div>
         <nav id="nav_right" class="nav_right">
@@ -126,20 +125,24 @@
 
     <div class="dropdown-options" id="dropdown-options" style="display: none;">
         
-        <div class="dropdown-option certificates-option" onmouseover="showSubmenu('certificates-submenu')">
+        <div class="dropdown-option certificates-option" onmouseover="showSubmenu('certificates-submenu')" onmouseout="hideSubmenu('certificates-submenu')">
             Certificates
             <!-- Submenu for Certificates -->
             <div class="submenu" id="certificates-submenu" style="display: none;">
                 <div class="submenu-option" onclick="selectOption('Certificate of Indigency'); showCertificateDetails('indigency')">Certificate of Indigency</div>
                 <div class="submenu-option" onclick="selectOption('Certificate of Residency'); showCertificateDetails('residency')">Certificate of Residency</div>
+                <div class="submenu-option" onclick="selectOption('Certificate of First Time Job Seeker'); showCertificateDetails('job_seeker')">Certificate of First Time Job Seeker</div>
+                <div class="submenu-option" onclick="selectOption('Certificate of Job Absence'); showCertificateDetails('absence')">Certificate of Job Absence</div>
                 <div class="submenu-option" onclick="selectOption('Certificate of Solo Parent'); showCertificateDetails('solo_parent')">Certificate of Solo Parent</div>
             </div>
         </div>
+
         <div class="dropdown-option" onclick="selectOption('Health Services & Medications'); showField('health_services')">Health Services & Medications</div>
         <div class="dropdown-option" onclick="selectOption('Daycare Admission Shortlisting'); showField('daycare')">Daycare Admission Shortlisting</div>
     </div>
-
     </div>
+
+ 
 
     <div id="div1" class="val-div" style="display: none;">
     <!-- Content will be updated here based on the selected submenu option -->
