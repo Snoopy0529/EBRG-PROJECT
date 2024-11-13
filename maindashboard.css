@@ -367,6 +367,16 @@ header .search_bar{
     top: 20px; /* Adjust this value to move it downward */
 }
 
+#daycare_container2 {
+    background-color: #6AC2A5;
+    height: 460px;
+    width: 840px;
+    position: relative;
+    right: 0px;
+    margin-top: 240px;
+    border-radius: 15px;
+}
+
 /* START OF DROPDOWN */
 .custom-dropdown {
     width: 600px;
@@ -525,6 +535,62 @@ header .search_bar{
     width: 325px;
 }
 
+.address1 {
+    background-color: #d8d6d2; /* Match the color of the input */
+    color: #9b9089; /* Text color */
+    padding: 10px 10px 10px 15px; /* Padding to match the image */
+    border-radius: 12px; /* Rounded corners */
+    font-family: inherit; /* Match the font family */
+    border: none;
+    font-size: 23px;
+    left: 460px;
+    position: relative;
+    bottom: 29px;
+    width: 325px;
+}
+
+.address2 {
+    background-color: #d8d6d2; /* Match the color of the input */
+    color: #9b9089; /* Text color */
+    padding: 10px 10px 10px 15px; /* Padding to match the image */
+    border-radius: 12px; /* Rounded corners */
+    font-family: inherit; /* Match the font family */
+    border: none;
+    font-size: 23px;
+    left: 460px;
+    position: relative;
+    bottom: 80px;
+    width: 325px;
+}
+
+.address3 {
+    background-color: #d8d6d2; /* Match the color of the input */
+    color: #9b9089; /* Text color */
+    padding: 10px 10px 10px 15px; /* Padding to match the image */
+    border-radius: 12px; /* Rounded corners */
+    font-family: inherit; /* Match the font family */
+    border: none;
+    font-size: 23px;
+    left: 30px;
+    position: relative;
+    bottom: 110px;
+    width: 750px;
+}
+
+.business_name {
+    background-color: #d8d6d2; /* Match the color of the input */
+    color: #9b9089; /* Text color */
+    padding: 10px 10px 10px 15px; /* Padding to match the image */
+    border-radius: 12px; /* Rounded corners */
+    font-family: inherit; /* Match the font family */
+    border: none;
+    font-size: 23px;
+    left: 200px;
+    position: relative;
+    bottom: 80px;
+    width: 300px;
+}
+
 .employer {
     background-color: #d8d6d2; /* Match the color of the input */
     color: #9b9089; /* Text color */
@@ -616,6 +682,21 @@ header .search_bar{
     border: none;
 }
 
+#years_of_occupancy1 {
+    background-color: #d8d6d2; /* Match the color of the input */
+    color: #9b9089; /* Text color */
+    width: 280px; /* Adjust width as needed */
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    bottom: 130px;
+    left: 510px;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 20px;
+    border: none;
+}
+
+
 #years_of_separation {
     background-color: #d8d6d2; /* Match the color of the input */
     color: #9b9089; /* Text color */
@@ -644,6 +725,28 @@ header .search_bar{
     border: none;
 }
 
+#measurement {
+    background-color: #d8d6d2; /* Match the color of the input */
+    color: #9b9089; /* Text color */
+    width: 155px; /* Adjust width as needed */
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    bottom: 80px;
+    left: 310px;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 18px;
+    border: none;
+}
+
+.measurement_label {
+    font-family: inherit; /* Match the font family */
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 300px;
+    bottom: 80px;
+}
 
 .select-bg {
     background-color: #d8d6d2;
@@ -678,6 +781,50 @@ header .search_bar{
     border-radius: 12px;
 }
 
+.select-bg4 {
+    background-color: #d8d6d2;
+    color: #9b9089;
+    width: 160px;
+    height: 50px;
+    margin-left: 33px;
+    position: relative;
+    bottom: 30px;
+    border-radius: 12px;
+}
+
+.select-bg5 {
+    background-color: #d8d6d2;
+    color: #9b9089;
+    width: 250px;
+    height: 50px;
+    margin-left: 200px;
+    position: relative;
+    bottom: 130px;
+    border-radius: 12px;
+}
+
+.select-bg6 {
+    background-color: #d8d6d2;
+    color: #9b9089;
+    width: 250px;
+    height: 50px;
+    margin-left: 30px;
+    position: relative;
+    bottom: 30px;
+    border-radius: 12px;
+}
+
+.select-bg7 {
+    background-color: #d8d6d2;
+    color: #9b9089;
+    width: 350px;
+    height: 50px;
+    margin-left: 240px;
+    position: relative;
+    bottom: 80px;
+    border-radius: 12px;
+}
+
 input[type="file"] {
     opacity: 0;
     position: absolute;
@@ -687,8 +834,10 @@ input[type="file"] {
 }
 
 .select {
-    font-size: 23px;
+    font-size: 20px;
     font-family: inherit; /* Match the font family */
+    position: relative;
+    top: 10px;
     margin-left: 10px;
     cursor: pointer;
 }
@@ -751,7 +900,7 @@ input[type="file"] {
     padding: 10px;
     position: relative;
     margin-left: 590px;
-    bottom: 20px;
+    bottom: 70px;
     cursor: pointer;
     color: #9b9089; /* Text color */
     font-family: inherit;
@@ -808,7 +957,7 @@ input[type="file"] {
     padding: 10px;
     position: relative;
     margin-left: 620px;
-    bottom: 120px;
+    bottom: 170px;
     cursor: pointer;
     color: #9b9089; /* Text color */
     font-family: inherit;
@@ -858,6 +1007,63 @@ input[type="file"] {
     border-radius: 15px;
 }
 
+.type-dropdown4 {
+    width: 260px;
+    background-color: #d8d6d2; /* Background color to match your design */
+    border-radius: 15px;
+    padding: 10px;
+    position: relative;
+    margin-left: 530px;
+    bottom: 127px;
+    cursor: pointer;
+    color: #9b9089; /* Text color */
+    font-family: inherit;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selected-option4 {
+    flex: 1; /* Takes up available space to push the icon to the right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-type4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.type-icon4 {
+    font-size: 12px;
+    margin-left: auto;
+}
+
+.type-options4 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #d8d6d2; /* Background color to match */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden initially */
+    z-index: 10; /* Ensure dropdown appears above other elements */
+}
+
+.type-option4 {
+    padding: 10px;
+    cursor: pointer;
+    color: #9b9089; /* Match text color */
+}
+
+.type-option4:hover {
+    background-color: #e0e0e0; /* Lighten background on hover */
+    border-radius: 15px;
+}
+
 .myself-option {
     font-size: 20px;
     font-family: inherit; /* Match the font family */
@@ -898,6 +1104,36 @@ input[type="file"] {
     cursor: pointer;
 }
 
+.myself-option5 {
+    font-size: 20px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    bottom: 60px;
+    right: 270px;
+    color: white;
+    cursor: pointer;
+}
+
+.myself-option6 {
+    font-size: 20px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    top: 10px;
+    right: 360px;
+    color: white;
+    cursor: pointer;
+}
+
+.myself-option7 {
+    font-size: 20px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    bottom: 80px;
+    margin-left: 40px;
+    color: white;
+    cursor: pointer;
+}
+
 .clear {
     cursor: pointer;
     font-size: 19px;
@@ -910,20 +1146,6 @@ input[type="file"] {
     border: none;
     bottom: 40px;
     margin-left: 367px;
-}
-
-.submit {
-    cursor: pointer;
-    font-size: 19px;
-    font-family: inherit; /* Match the font family */
-    position: relative;
-    background-color: #9b9089;
-    color: white;
-    padding: 5px 25px 5px 25px;
-    border-radius: 15px;
-    border: none;
-    bottom: 77px;
-    margin-left: 690px;
 }
 
 .clear2 {
@@ -940,20 +1162,6 @@ input[type="file"] {
     margin-left: 367px;
 }
 
-.submit2 {
-    cursor: pointer;
-    font-size: 19px;
-    font-family: inherit; /* Match the font family */
-    position: relative;
-    background-color: #9b9089;
-    color: white;
-    padding: 5px 25px 5px 25px;
-    border-radius: 15px;
-    border: none;
-    bottom: 27px;
-    margin-left: 690px;
-}
-
 .clear3 {
     cursor: pointer;
     font-size: 19px;
@@ -966,20 +1174,6 @@ input[type="file"] {
     border: none;
     top: 10px;
     margin-left: 570px;
-}
-
-.submit3 {
-    cursor: pointer;
-    font-size: 19px;
-    font-family: inherit; /* Match the font family */
-    position: relative;
-    background-color: #9b9089;
-    color: white;
-    padding: 5px 25px 5px 25px;
-    border-radius: 15px;
-    border: none;
-    bottom: 27px;
-    margin-left: 690px;
 }
 
 .clear4 {
@@ -996,6 +1190,104 @@ input[type="file"] {
     margin-left: 370px;
 }
 
+.clear5 {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #FF3131;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    bottom: 38px;
+    margin-left: 570px;
+}
+
+.clear6 {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #FF3131;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    bottom: 60px;
+    margin-left: 367px;
+}
+
+.clear7 {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #FF3131;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    top: 10px;
+    margin-left: 570px;
+}
+
+.clear8 {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #FF3131;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    bottom: 100px;
+    margin-left: 570px;
+}
+
+.submit {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #9b9089;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    bottom: 77px;
+    margin-left: 690px;
+}
+
+.submit2 {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #9b9089;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    bottom: 27px;
+    margin-left: 690px;
+}
+
+.submit3 {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #9b9089;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    bottom: 27px;
+    margin-left: 690px;
+}
+
 .submit4 {
     cursor: pointer;
     font-size: 19px;
@@ -1007,6 +1299,34 @@ input[type="file"] {
     border-radius: 15px;
     border: none;
     bottom: 70px;
+    margin-left: 690px;
+}
+
+.submit5 {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #9b9089;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    bottom: 97px;
+    margin-left: 690px;
+}
+
+.submit6 {
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit; /* Match the font family */
+    position: relative;
+    background-color: #9b9089;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 15px;
+    border: none;
+    bottom: 137px;
     margin-left: 690px;
 }
 

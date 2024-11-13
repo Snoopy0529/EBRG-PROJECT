@@ -134,19 +134,28 @@
                 <div class="submenu-option" onclick="selectOption('Certificate of First Time Job Seeker'); showCertificateDetails('job_seeker')">Certificate of First Time Job Seeker</div>
                 <div class="submenu-option" onclick="selectOption('Certificate of Job Absence'); showCertificateDetails('absence')">Certificate of Job Absence</div>
                 <div class="submenu-option" onclick="selectOption('Certificate of Solo Parent'); showCertificateDetails('solo_parent')">Certificate of Solo Parent</div>
+                <div class="submenu-option" onclick="selectOption('Barangay Clearance'); showCertificateDetails('brgy_clearance')">Barangay Clearance</div>
+                <div class="submenu-option" onclick="selectOption('Fencing Clearance'); showCertificateDetails('fencing_clearance')">Fencing Clearance</div>
+                <div class="submenu-option" onclick="selectOption('Building Clearance'); showCertificateDetails('bldg_clearance')">Building Clearance</div>
+                <div class="submenu-option" onclick="selectOption('Order of Payment'); showCertificateDetails('order_payment')">Order of Payment</div>
+                <div class="submenu-option" onclick="selectOption('Electricity Installation Clearance'); showCertificateDetails('electricity')">Electricity Installation Clearance</div>
             </div>
         </div>
 
         <div class="dropdown-option" onclick="selectOption('Health Services & Medications'); showField('health_services')">Health Services & Medications</div>
-        <div class="dropdown-option" onclick="selectOption('Daycare Admission Shortlisting'); showField('daycare')">Daycare Admission Shortlisting</div>
+        <div class="dropdown-option" onclick="selectOption('Daycare Student Shortlisting'); showField('daycare')">Daycare Student Shortlisting</div>
     </div>
     </div>
-
- 
-
     <div id="div1" class="val-div" style="display: none;">
     <!-- Content will be updated here based on the selected submenu option -->
     </div>
+
+    <div id="daycare_container2" class="val-div" style="display: none;">
+    </div>
+    <div style="height: 90px;"></div>
+
+    </div>
+</div>  
 
 <!-- END OF DROPDOWN -->
 

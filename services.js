@@ -57,13 +57,27 @@ function selectTypeOption3(optionText) {
     document.getElementById("type-options3").style.display = "none";
 }
 
+// dropdowon for type of business
+function toggleTypeDropdown4() {
+    const typeOptions = document.getElementById("type-options4");
+    typeOptions.style.display = typeOptions.style.display === "none" ? "block" : "none";
+}
+
+function selectTypeOption4(optionText) {
+    const selectedTypeOption = document.querySelector(".type-dropdown4 .selected-option4");
+    selectedTypeOption.innerHTML = `${optionText} <span class="type-icon4">&#9662;</span>`;
+    document.getElementById("type-options4").style.display = "none";
+}
+
 function showCertificateDetails(type) {
     const div1 = document.getElementById("div1");
+    const daycare_container2 = document.getElementById("daycare_container2");
     div1.style.display = 'block';
+    daycare_container2.style.display = 'none';
 
     if (type === 'indigency') {
         div1.innerHTML = `
-            <h4 class="detail">Indigency Certificate Details:</h4>
+            <h4 class="detail">Details:</h4>
             <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
             <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
             <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
@@ -71,7 +85,7 @@ function showCertificateDetails(type) {
             <div class="select-bg">
                     <input type="file" id="image" name="image" required>
                     <label for="image" class="select" id="fileLabel">
-                        <strong><i class="fas fa-upload"></i> &nbsp; Select a picture</strong>
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                     </label>
             </div>
             <div class="type-dropdown">
@@ -92,7 +106,7 @@ function showCertificateDetails(type) {
         `;
     } else if (type === 'residency') {
         div1.innerHTML = `
-        <h4 class="detail">Residency Certificate Details:</h4>
+        <h4 class="detail">Details:</h4>
         <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
         <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
         <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
@@ -101,7 +115,7 @@ function showCertificateDetails(type) {
             <div class="select-bg2">
                     <input type="file" id="image" name="image" required>
                     <label for="image" class="select" id="fileLabel">
-                        <strong><i class="fas fa-upload"></i> &nbsp; Select a picture</strong>
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                     </label>
             </div>
             <label class="myself-option2">
@@ -112,14 +126,14 @@ function showCertificateDetails(type) {
         `;
     } else if (type === 'job_seeker') {
         div1.innerHTML = `
-        <h4 class="detail">First Time Job Seeker Certificate Details:</h4>
+        <h4 class="detail">Details:</h4>
         <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
         <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
         <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
         <div class="select-bg3">
                     <input type="file" id="image" name="image" required>
                     <label for="image" class="select" id="fileLabel">
-                        <strong><i class="fas fa-upload"></i> &nbsp; Select a picture</strong>
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                     </label>
         </div>
         <input type="text" class="employer" name="employer" placeholder="Employer/Company Name" required>
@@ -131,14 +145,14 @@ function showCertificateDetails(type) {
         `;
     } else if (type === 'absence') {
         div1.innerHTML = `
-        <h4 class="detail">Job Absence Certificate Details:</h4>
+        <h4 class="detail">Details:</h4>
         <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
         <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
         <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
         <div class="select-bg3">
                     <input type="file" id="image" name="image" required>
                     <label for="image" class="select" id="fileLabel">
-                        <strong><i class="fas fa-upload"></i> &nbsp; Select a picture</strong>
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                     </label>
         </div>
         <input type="text" class="employer2" name="employer" placeholder="Employer/Company Name" required>
@@ -154,19 +168,18 @@ function showCertificateDetails(type) {
         `;
     } else if (type === 'solo_parent') {
         div1.innerHTML = `
-        <h4 class="detail">Solo Parent Certificate Details:</h4>
+        <h4 class="detail">Details:</h4>
         <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
         <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
         <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
         <div class="select-bg3">
                     <input type="file" id="image" name="image" required>
                     <label for="image" class="select" id="fileLabel">
-                        <strong><i class="fas fa-upload"></i> &nbsp; Select a picture</strong>
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                     </label>
         </div>
         <input type="number" id="years_of_separation" name="years_of_separation" min="0" step="1" value="" placeholder="Years of Separation">
         <input type="number" id="number_of_children" name="number_of_children" min="0" step="1" value="" placeholder="No. of Children">
-        <label class="myself-option2">
         <div class="type-dropdown2">
             <div class="selected-option2" onclick="toggleTypeDropdown2()">
             -- Source of Income -- <span class="type-icon2">&#9662;</span> <!-- Dropdown arrow -->
@@ -193,16 +206,139 @@ function showCertificateDetails(type) {
         <label class="myself-option4">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
         </label>
+        <button id="clearBtn" class="clear6" onclick="clear('clear')">CLEAR</button>
+        <button id="submitBtn" class="submit5" onclick="submit('submit')">SUBMIT</button>
+        `;
+    } else if (type === 'brgy_clearance') {
+        div1.innerHTML = `
+            <h4 class="detail">Details:</h4>
+            <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+            <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+            <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+            <input type="text" class="age" name="age" placeholder="Age" required>
+            <div class="select-bg">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
+                    </label>
+            </div>
+            <input type="number" id="years_of_occupancy1" name="years_of_occupancy" min="0" step="1" value="" placeholder="Years of Occupancy">
+        <label class="myself-option5">
+            <input type="radio" name="for-myself" value="myself"> Apply for myself
+        </label>
+        <button id="clearBtn" class="clear5" onclick="clear('clear')">CLEAR</button>
+        <button id="submitBtn" class="submit" onclick="submit('submit')">SUBMIT</button>
+
+        `;
+    } else if (type === 'fencing_clearance') {
+        div1.innerHTML = `
+        <h4 class="detail">Details:</h4>
+        <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+        <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+        <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+        <div class="select-bg4">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
+                    </label>
+            </div>
+        <input type="text" class="address2" name="address" placeholder="Complete Address" required>
+            <div class="select-bg5">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; Updated Lot Certification</strong>
+                    </label>
+            </div>
+            <label class="myself-option4">
+            <input type="radio" name="for-myself" value="myself"> Apply for myself
+            </label>
         <button id="clearBtn" class="clear4" onclick="clear('clear')">CLEAR</button>
         <button id="submitBtn" class="submit4" onclick="submit('submit')">SUBMIT</button>
         `;
-    } 
+    } else if (type === 'bldg_clearance') {
+        div1.innerHTML = `
+        <h4 class="detail">Details:</h4>
+        <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+        <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+        <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+            <div class="select-bg6">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; Updated Lot Certification</strong>
+                    </label>
+            </div>
+            <label class="measurement_label"> Lot Measurement in sqm: </label>
+            <input type="number" id="measurement" name="measurement" min="0" step="1" value="" placeholder="Lot Measurement">
+            <label class="myself-option6">
+            <input type="radio" name="for-myself" value="myself"> Apply for myself
+            </label>
+        <button id="clearBtn" class="clear7" onclick="clear('clear')">CLEAR</button>
+        <button id="submitBtn" class="submit2" onclick="submit('submit')">SUBMIT</button>
+        `;
+    } else if (type === 'order_payment') {
+        div1.innerHTML = `
+        <h4 class="detail">Details:</h4>
+        <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+        <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+        <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+        <div class="select-bg4">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
+                    </label>
+            </div>
+        <input type="text" class="business_name" name="address" placeholder="Business Name" required>
+        <div class="type-dropdown4">
+            <div class="selected-option4" onclick="toggleTypeDropdown4()">
+            -- Type of Business -- <span class="type-icon4">&#9662;</span> <!-- Dropdown arrow -->
+            </div>
+            <div class="type-options4" id="type-options4" style="display: none;">
+            <div class="type-option4" onclick="selectTypeOption4('Retail and E-commerce')">Retail and E-commerce</div>
+            <div class="type-option4" onclick="selectTypeOption4('Food and Beverage')">Food and Beverage</div>
+            <div class="type-option4" onclick="selectTypeOption4('Service-Based')">Service-Based</div>
+            <div class="type-option4" onclick="selectTypeOption4('Manufacturing and Production')">Manufacturing and Production</div>
+            <div class="type-option4" onclick="selectTypeOption4('Finance and Real Estate')">Finance and Real Estate</div>
+            </div>
+        </div>
+        <input type="text" class="address3" name="address" placeholder="Business Address" required>
+            <label class="myself-option7">
+            <input type="radio" name="for-myself" value="myself"> Apply for myself
+            </label>
+        <button id="clearBtn" class="clear8" onclick="clear('clear')">CLEAR</button>
+        <button id="submitBtn" class="submit6" onclick="submit('submit')">SUBMIT</button>
+        `;
+    } else if (type === 'electricity') {
+        div1.innerHTML = `
+        <h4 class="detail">Details:</h4>
+        <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+        <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+        <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+        <div class="select-bg3">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
+                    </label>
+        </div>
+        <div class="select-bg7">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; Updated Lot Certification</strong>
+                    </label>
+            </div>
+        <label class="myself-option2">
+            <input type="radio" name="for-myself" value="myself"> Apply for myself
+        </label>
+        <button id="clearBtn" class="clear2" onclick="clear('clear')">CLEAR</button>
+        <button id="submitBtn" class="submit2" onclick="submit('submit')">SUBMIT</button>
+        `;
+    }
 
 }
 
 function showField(type) {
     const div1 = document.getElementById("div1");
     div1.style.display = 'block';
+    daycare_container2.style.display = 'none';
 
     if (type === 'health_services') {
         div1.innerHTML = `
@@ -212,11 +348,21 @@ function showField(type) {
             <input type="date" class="appointment_date" name="appointment_date" required>
         `;
     } else if (type === 'daycare') {
+        div1.style.display = 'block';
+        daycare_container2.style.display = 'block';
+        
         div1.innerHTML = `
-            <h4 class="detail">Daycare Admission Shortlisting:</h4>
+            <h4 class="detail">Student's Information:</h4>
             <input type="text" class="child_name" name="child_name" placeholder="Child's Name" required>
             <input type="text" class="parent_name" name="parent_name" placeholder="Parent's Name" required>
             <input type="number" class="child_age" name="child_age" placeholder="Child's Age" required>
+        `;
+
+        daycare_container2.innerHTML = `
+            <h4 class="detail">Guardian's Information:</h4>
+            <input type="text" class="child_name" name="child_name" placeholder="Child's Name" required>
+            <input type="text" class="parent_name" name="parent_name" placeholder="Parent's Name" required>
+            <input type="number" class="child_age" name="child_age" placeholder="Child's Age" required> 
         `;
     }
 }
