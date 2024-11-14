@@ -118,34 +118,35 @@ function showCertificateDetails(type) {
     
                 <!-- Radio button for "Apply for myself" -->
                 <label class="myself-option">
-                    <input type="radio" name="for_myself" value="myself"> Apply for myself
+                <input type="radio" name="apply_myself" value="myself"> Apply for myself
                 </label>
-    
+
                 <!-- Clear and Submit Buttons -->
                 <button type="button" class="clear" onclick="clearForm('div1')">CLEAR</button>
                 <button type="submit" class="submit">SUBMIT</button>
             </form>
         `;
-    }
-     else if (type === 'residency') {
+    } else if (type === 'residency') {
         div1.innerHTML = `
-        <h4 class="detail">Details:</h4>
-        <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
-        <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
-        <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
-        <input type="number" id="years_of_occupancy" name="years_of_occupancy" min="0" step="1" value="" placeholder="Years of Occupancy">
-        <input type="text" class="address" name="address" placeholder="Complete Address" required>
-            <div class="select-bg2">
-                    <input type="file" id="image" name="image" required onchange="updateLabel(this)">
+            <form id="residencyForm" action="insert.php" method="POST" enctype="multipart/form-data">
+            <h4 class="detail">Details:</h4>
+            <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+            <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+            <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+            <input type="number" id="years_of_occupancy" name="yrs_of_occupancy" min="0" step="1" value="" placeholder="Years of Occupancy">
+            <input type="text" class="address" name="address" placeholder="Complete Address" required>
+                <div class="select-bg2">
+                    <input type="file" id="image" name="id_pic" required onchange="updateLabel(this)">
                     <label for="image" class="select" id="fileLabel">
                         <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                      </label>
                 </div>
             <label class="myself-option2">
-            <input type="radio" name="for-myself" value="myself"> Apply for myself
+            <input type="radio" name="apply_myself" value="myself"> Apply for myself
             </label>
-        <button id="clearBtn" class="clear2" onclick="clearForm('div1')">CLEAR</button>
-        <button id="submitBtn" class="submit2" onclick="submit('submit')">SUBMIT</button>
+            <button id="clearBtn" class="clear2" onclick="clearForm('div1')">CLEAR</button>
+            <button id="submitBtn" class="submit2" onclick="submit('submit')">SUBMIT</button>
+        </form>
         `;
     } else if (type === 'job_seeker') {
         div1.innerHTML = `
