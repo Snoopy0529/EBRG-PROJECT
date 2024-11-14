@@ -633,10 +633,10 @@ header .search_bar{
     font-family: inherit; /* Match the font family */
     border: none;
     font-size: 23px;
-    left: 460px;
+    left: 485px;
     position: relative;
     bottom: 80px;
-    width: 325px;
+    width: 300px;
 }
 
 .address3 {
@@ -821,7 +821,7 @@ header .search_bar{
     font-family: inherit; /* Match the font family */
     position: relative;
     bottom: 80px;
-    left: 310px;
+    left: 320px;
     padding: 10px;
     border-radius: 12px;
     font-size: 18px;
@@ -833,7 +833,7 @@ header .search_bar{
     color: white;
     font-size: 20px;
     position: relative;
-    left: 300px;
+    left: 320px;
     bottom: 80px;
 }
 
@@ -884,7 +884,7 @@ header .search_bar{
 .select-bg5 {
     background-color: #d8d6d2;
     color: #9b9089;
-    width: 250px;
+    width: 275px;
     height: 50px;
     margin-left: 200px;
     position: relative;
@@ -895,7 +895,7 @@ header .search_bar{
 .select-bg6 {
     background-color: #d8d6d2;
     color: #9b9089;
-    width: 250px;
+    width: 275px;
     height: 50px;
     margin-left: 30px;
     position: relative;

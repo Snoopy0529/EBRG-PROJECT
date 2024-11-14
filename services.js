@@ -27,8 +27,8 @@ function toggleTypeDropdown() {
 }
 
 function selectTypeOption(optionText) {
-    const selectedTypeOption = document.querySelector(".type-dropdown .selected-option");
-    selectedTypeOption.innerHTML = `${optionText} <span class="type-icon">&#9662;</span>`;
+    document.getElementById("assistance-selected-option").innerHTML = `${optionText} <span class="type-icon">&#9662;</span>`;
+    document.getElementById("assistance_type").value = optionText;
     document.getElementById("type-options").style.display = "none";
 }
 
@@ -89,34 +89,45 @@ function showCertificateDetails(type) {
 
     if (type === 'indigency') {
         div1.innerHTML = `
-            <h4 class="detail">Details:</h4>
-            <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
-            <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
-            <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
-            <input type="number" id="age" name="age" min="0" step="1" value="" placeholder="Age">
-            <div class="select-bg">
-                    <input type="file" id="image" name="image" required>
+            <form id="indigencyForm" action="insert.php" method="POST" enctype="multipart/form-data">
+                <h4 class="detail">Details:</h4>
+                <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+                <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+                <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+                <input type="number" id="age" name="age" min="0" step="1" value="" placeholder="Age" required>
+                
+                <!-- File input for ID Picture with label -->
+                <div class="select-bg">
+                    <input type="file" id="image" name="id_pic" required onchange="updateLabel(this)">
                     <label for="image" class="select" id="fileLabel">
                         <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                     </label>
-            </div>
-            <div class="type-dropdown">
-            <div class="selected-option" onclick="toggleTypeDropdown()">
-            -- Assistance Type -- <span class="type-icon">&#9662;</span> <!-- Dropdown arrow -->
-            </div>
-            <div class="type-options" id="type-options" style="display: none;">
-            <div class="type-option" onclick="selectTypeOption('Financial')">Financial</div>
-            <div class="type-option" onclick="selectTypeOption('Medical')">Medical</div>
-            </div>
-            </div>
-        <label class="myself-option">
-            <input type="radio" name="for-myself" value="myself"> Apply for myself
-        </label>
-        <button id="clearBtn" class="clear" onclick="clearForm('div1')">CLEAR</button>
-        <button id="submitBtn" class="submit" onclick="submit('submit')">SUBMIT</button>
-
+                </div>
+                
+                <!-- Assistance Type Dropdown -->
+                <div class="type-dropdown">
+                <div class="selected-option" id="assistance-selected-option" onclick="toggleTypeDropdown()">
+                 -- Assistance Type -- <span class="type-icon">&#9662;</span> <!-- Dropdown arrow -->
+                </div>
+                <div class="type-options" id="type-options" style="display: none;">
+                <div class="type-option" onclick="selectTypeOption('Financial')">Financial</div>
+                <div class="type-option" onclick="selectTypeOption('Medical')">Medical</div>
+                </div>
+                <input type="hidden" id="assistance_type" name="assistance_type" value="" required>
+                </div>
+    
+                <!-- Radio button for "Apply for myself" -->
+                <label class="myself-option">
+                    <input type="radio" name="for_myself" value="myself"> Apply for myself
+                </label>
+    
+                <!-- Clear and Submit Buttons -->
+                <button type="button" class="clear" onclick="clearForm('div1')">CLEAR</button>
+                <button type="submit" class="submit">SUBMIT</button>
+            </form>
         `;
-    } else if (type === 'residency') {
+    }
+     else if (type === 'residency') {
         div1.innerHTML = `
         <h4 class="detail">Details:</h4>
         <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
@@ -125,11 +136,11 @@ function showCertificateDetails(type) {
         <input type="number" id="years_of_occupancy" name="years_of_occupancy" min="0" step="1" value="" placeholder="Years of Occupancy">
         <input type="text" class="address" name="address" placeholder="Complete Address" required>
             <div class="select-bg2">
-                    <input type="file" id="image" name="image" required>
+                    <input type="file" id="image" name="image" required onchange="updateLabel(this)">
                     <label for="image" class="select" id="fileLabel">
                         <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
-                    </label>
-            </div>
+                     </label>
+                </div>
             <label class="myself-option2">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
             </label>

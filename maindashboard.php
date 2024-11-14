@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -173,6 +175,22 @@
        <script src="AESH.js"></script>
        <script src="services.js"></script>
        <script src="clear_form.js"></script>
+       <script src="insert.php"></script>
+       <script>
+
+        // updates selected image
+        function updateLabel(input) {
+            const label = document.getElementById("fileLabel");
+            const iconHTML = `<i class="fas fa-upload"></i>&nbsp;`; // Icon HTML
+
+            if (input.files && input.files[0]) {
+                label.innerHTML = `<strong><i class="fas fa-upload"></i> &nbsp; ${input.files[0].name}</strong>`;
+            } else {
+        label.innerHTML = `<strong><i class="fas fa-upload"></i> &nbsp; Select a picture</strong>`;
+            }
+        }
+
+       </script>
 
 </body>
 </html>
