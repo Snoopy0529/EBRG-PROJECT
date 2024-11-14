@@ -62,7 +62,7 @@
         <button id="announcementsBtn" class="a1" onclick="showDiv('announcements')">announcements</button>
         <button id="eventsBtn" class="e1" onclick="showDiv('events')">events</button>
         <button id="servicesBtn" class="s1" onclick="showDiv('services')">services</button>
-        <button id="hotlinesBtn" class="h1" onclick="showDiv('hotlines')">hotlines</button>
+        <button id="contact_usBtn" class="h1" onclick="showDiv('contact_us')">contact us</button>
     </div>
     
     <div id="announcements" class="content-div">
@@ -172,6 +172,7 @@
        <script src="hamburgermenu.js"></script>
        <script src="AESH.js"></script>
        <script src="services.js"></script>
+       <script src="clear_form.js"></script>
 
 </body>
 </html>

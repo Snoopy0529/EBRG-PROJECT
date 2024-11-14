@@ -57,7 +57,7 @@ function selectTypeOption3(optionText) {
     document.getElementById("type-options3").style.display = "none";
 }
 
-// dropdowon for type of business
+// dropdown for type of business
 function toggleTypeDropdown4() {
     const typeOptions = document.getElementById("type-options4");
     typeOptions.style.display = typeOptions.style.display === "none" ? "block" : "none";
@@ -67,6 +67,18 @@ function selectTypeOption4(optionText) {
     const selectedTypeOption = document.querySelector(".type-dropdown4 .selected-option4");
     selectedTypeOption.innerHTML = `${optionText} <span class="type-icon4">&#9662;</span>`;
     document.getElementById("type-options4").style.display = "none";
+}
+
+// dropdown for kinder level
+function toggleTypeDropdown5() {
+    const typeOptions = document.getElementById("type-options5");
+    typeOptions.style.display = typeOptions.style.display === "none" ? "block" : "none";
+}
+
+function selectTypeOption5(optionText) {
+    const selectedTypeOption = document.querySelector(".type-dropdown5 .selected-option5");
+    selectedTypeOption.innerHTML = `${optionText} <span class="type-icon5">&#9662;</span>`;
+    document.getElementById("type-options5").style.display = "none";
 }
 
 function showCertificateDetails(type) {
@@ -81,7 +93,7 @@ function showCertificateDetails(type) {
             <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
             <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
             <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
-            <input type="text" class="age" name="age" placeholder="Age" required>
+            <input type="number" id="age" name="age" min="0" step="1" value="" placeholder="Age">
             <div class="select-bg">
                     <input type="file" id="image" name="image" required>
                     <label for="image" class="select" id="fileLabel">
@@ -100,7 +112,7 @@ function showCertificateDetails(type) {
         <label class="myself-option">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
         </label>
-        <button id="clearBtn" class="clear" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit" onclick="submit('submit')">SUBMIT</button>
 
         `;
@@ -121,7 +133,7 @@ function showCertificateDetails(type) {
             <label class="myself-option2">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
             </label>
-        <button id="clearBtn" class="clear2" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear2" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit2" onclick="submit('submit')">SUBMIT</button>
         `;
     } else if (type === 'job_seeker') {
@@ -140,7 +152,7 @@ function showCertificateDetails(type) {
         <label class="myself-option3">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
         </label>
-        <button id="clearBtn" class="clear3" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear3" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit3" onclick="submit('submit')">SUBMIT</button>
         `;
     } else if (type === 'absence') {
@@ -163,7 +175,7 @@ function showCertificateDetails(type) {
         <label class="myself-option2">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
         </label>
-        <button id="clearBtn" class="clear4" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear4" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit4" onclick="submit('submit')">SUBMIT</button>
         `;
     } else if (type === 'solo_parent') {
@@ -206,7 +218,7 @@ function showCertificateDetails(type) {
         <label class="myself-option4">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
         </label>
-        <button id="clearBtn" class="clear6" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear6" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit5" onclick="submit('submit')">SUBMIT</button>
         `;
     } else if (type === 'brgy_clearance') {
@@ -215,7 +227,7 @@ function showCertificateDetails(type) {
             <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
             <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
             <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
-            <input type="text" class="age" name="age" placeholder="Age" required>
+            <input type="number" id="age2" name="age" min="0" step="1" value="" placeholder="Age">
             <div class="select-bg">
                     <input type="file" id="image" name="image" required>
                     <label for="image" class="select" id="fileLabel">
@@ -226,7 +238,7 @@ function showCertificateDetails(type) {
         <label class="myself-option5">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
         </label>
-        <button id="clearBtn" class="clear5" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear5" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit" onclick="submit('submit')">SUBMIT</button>
 
         `;
@@ -252,7 +264,7 @@ function showCertificateDetails(type) {
             <label class="myself-option4">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
             </label>
-        <button id="clearBtn" class="clear4" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear4" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit4" onclick="submit('submit')">SUBMIT</button>
         `;
     } else if (type === 'bldg_clearance') {
@@ -272,7 +284,7 @@ function showCertificateDetails(type) {
             <label class="myself-option6">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
             </label>
-        <button id="clearBtn" class="clear7" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear7" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit2" onclick="submit('submit')">SUBMIT</button>
         `;
     } else if (type === 'order_payment') {
@@ -304,7 +316,7 @@ function showCertificateDetails(type) {
             <label class="myself-option7">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
             </label>
-        <button id="clearBtn" class="clear8" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear8" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit6" onclick="submit('submit')">SUBMIT</button>
         `;
     } else if (type === 'electricity') {
@@ -324,15 +336,14 @@ function showCertificateDetails(type) {
                     <label for="image" class="select" id="fileLabel">
                         <strong><i class="fas fa-upload"></i> &nbsp; Updated Lot Certification</strong>
                     </label>
-            </div>
+        </div>
         <label class="myself-option2">
             <input type="radio" name="for-myself" value="myself"> Apply for myself
         </label>
-        <button id="clearBtn" class="clear2" onclick="clear('clear')">CLEAR</button>
+        <button id="clearBtn" class="clear2" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit2" onclick="submit('submit')">SUBMIT</button>
         `;
     }
-
 }
 
 function showField(type) {
@@ -343,9 +354,23 @@ function showField(type) {
     if (type === 'health_services') {
         div1.innerHTML = `
             <h4 class="detail">Health Services & Medications:</h4>
-            <input type="text" class="patient_name" name="patient_name" placeholder="Patient Name" required>
-            <input type="text" class="medication" name="medication" placeholder="Medication Name" required>
-            <input type="date" class="appointment_date" name="appointment_date" required>
+            <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+            <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+            <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+            <div class="select-bg3">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
+                    </label>
+            </div>
+            <div class="select-bg7">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; Updated Lot Certification</strong>
+                    </label>
+            </div>
+            <button id="clearBtn" class="clear2" onclick="clear('clear')">CLEAR</button>
+            <button id="submitBtn" class="submit2" onclick="submit('submit')">SUBMIT</button>
         `;
     } else if (type === 'daycare') {
         div1.style.display = 'block';
@@ -353,16 +378,49 @@ function showField(type) {
         
         div1.innerHTML = `
             <h4 class="detail">Student's Information:</h4>
-            <input type="text" class="child_name" name="child_name" placeholder="Child's Name" required>
-            <input type="text" class="parent_name" name="parent_name" placeholder="Parent's Name" required>
-            <input type="number" class="child_age" name="child_age" placeholder="Child's Age" required>
+            <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
+            <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
+            <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
+            <div class="select-bg3">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; Health Record</strong>
+                    </label>
+            </div>
+            <div class="select-bg8">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; Birth Certificate</strong>
+                    </label>
+            </div>
+            <div class="type-dropdown5">
+            <div class="selected-option5" onclick="toggleTypeDropdown5()">
+            -- Kinder Level -- <span class="type-icon5">&#9662;</span> <!-- Dropdown arrow -->
+            </div>
+            <div class="type-options5" id="type-options5" style="display: none;">
+            <div class="type-option5" onclick="selectTypeOption5('Kinder I')">Kinder I</div>
+            <div class="type-option5" onclick="selectTypeOption5('Kinder II')">Kinder II</div>
+            </div>
+            </div>
+            <button id="clearBtn" class="clear5" onclick="clearForm('div1')">CLEAR</button>
+            <button id="submitBtn" class="submit4" onclick="submit('submit')">SUBMIT</button>
         `;
 
         daycare_container2.innerHTML = `
-            <h4 class="detail">Guardian's Information:</h4>
-            <input type="text" class="child_name" name="child_name" placeholder="Child's Name" required>
-            <input type="text" class="parent_name" name="parent_name" placeholder="Parent's Name" required>
-            <input type="number" class="child_age" name="child_age" placeholder="Child's Age" required> 
+            <h4 class="detail2">Guardian's Information:</h4>
+            <input type="text" class="firstname2" name="first_name" placeholder="First Name" required>
+            <input type="text" class="middlename2" name="middle_name" placeholder="Middle Name" required>
+            <input type="text" class="lastname2" name="last_name" placeholder="Last Name" required>
+            <input type="number" id="age3" name="age" min="0" step="1" value="" placeholder="Age">
+            <div class="select-bg9">
+                    <input type="file" id="image" name="image" required>
+                    <label for="image" class="select" id="fileLabel">
+                        <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
+                    </label>
+            </div>
+            <input type="text" class="contact_num" name="contact_num" placeholder="Contact Number" required>
+            <button id="clearBtn" class="clear3" onclick="clearForm('daycare_container2')">CLEAR</button>
+            <button id="submitBtn" class="submit3" onclick="submit('submit')">SUBMIT</button>
         `;
     }
 }
