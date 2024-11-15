@@ -150,31 +150,34 @@ function showCertificateDetails(type) {
         `;
     } else if (type === 'job_seeker') {
         div1.innerHTML = `
+        <form id="jobseekForm" action="insert.php" method="POST" enctype="multipart/form-data">
         <h4 class="detail">Details:</h4>
         <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
         <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
         <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
         <div class="select-bg3">
-                    <input type="file" id="image" name="image" required>
+                    <input type="file" id="image" name="id_pic" required onchange="updateLabel(this)">
                     <label for="image" class="select" id="fileLabel">
                         <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                     </label>
         </div>
         <input type="text" class="employer" name="employer" placeholder="Employer/Company Name" required>
         <label class="myself-option3">
-            <input type="radio" name="for-myself" value="myself"> Apply for myself
+            <input type="radio" name="apply_myself" value="myself"> Apply for myself
         </label>
         <button id="clearBtn" class="clear3" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit3" onclick="submit('submit')">SUBMIT</button>
+        </form>
         `;
     } else if (type === 'absence') {
         div1.innerHTML = `
+        <form id="jobabsenceForm" action="insert.php" method="POST" enctype="multipart/form-data">
         <h4 class="detail">Details:</h4>
         <input type="text" class="firstname" name="first_name" placeholder="First Name" required>
         <input type="text" class="middlename" name="middle_name" placeholder="Middle Name" required>
         <input type="text" class="lastname" name="last_name" placeholder="Last Name" required>
         <div class="select-bg3">
-                    <input type="file" id="image" name="image" required>
+                    <input type="file" id="image" name="id_pic" required onchange="updateLabel(this)">
                     <label for="image" class="select" id="fileLabel">
                         <strong><i class="fas fa-upload"></i> &nbsp; ID Picture</strong>
                     </label>
@@ -185,10 +188,11 @@ function showCertificateDetails(type) {
         <input type="number" id="duration" name="duration" min="0" step="1" value="" placeholder="Duration">
         <input type="text" class="reason" name="reason" placeholder="Reason" required>
         <label class="myself-option2">
-            <input type="radio" name="for-myself" value="myself"> Apply for myself
+            <input type="radio" name="apply_myself" value="myself"> Apply for myself
         </label>
         <button id="clearBtn" class="clear4" onclick="clearForm('div1')">CLEAR</button>
         <button id="submitBtn" class="submit4" onclick="submit('submit')">SUBMIT</button>
+        </form>
         `;
     } else if (type === 'solo_parent') {
         div1.innerHTML = `
