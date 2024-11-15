@@ -29,20 +29,36 @@ $target_file = $target_dir . basename($id_pic);
 if ($id_pic && move_uploaded_file($_FILES["id_pic"]["tmp_name"], $target_file)) {
 
     // Check if it's an indigency certificate or residency certificate
-    if (isset($_POST['yrs_of_occupancy']) && isset($_POST['address'])) {
-        // Certificate of Residency fields
-        $yrs_of_occupancy = $_POST['yrs_of_occupancy'];
-        $address = $_POST['address'];
-
-        // Insert data into the database for residency
-        $sql = "INSERT INTO residency_cert (first_name, middle_name, last_name, yrs_occupancy, address, id_pic, apply_myself)
-                VALUES ('$first_name', '$middle_name', '$last_name', '$yrs_of_occupancy', '$address', '$id_pic', '$apply_myself')";
-
-    } else {
+    if (isset($age) && isset($assistance_type)) {
         // Insert data into the database for indigency certificate
         $sql = "INSERT INTO indigency_cert (first_name, middle_name, last_name, age, id_pic, assistance_type, apply_myself)
                 VALUES ('$first_name', '$middle_name', '$last_name', '$age', '$id_pic', '$assistance_type', '$apply_myself')";
+    
+    } else if (isset($_POST['yrs_of_occupancy']) && isset($_POST['address'])) {
+        // Certificate of Residency fields
+        $yrs_of_occupancy = $_POST['yrs_of_occupancy'];
+        $address = $_POST['address'];
+    
+        // Insert data into the database for residency
+        $sql = "INSERT INTO residency_cert (first_name, middle_name, last_name, yrs_occupancy, address, id_pic, apply_myself)
+                VALUES ('$first_name', '$middle_name', '$last_name', '$yrs_of_occupancy', '$address', '$id_pic', '$apply_myself')";
+    
+    } else if (isset($_POST['yrs_of_occupancy']) && isset($_POST['address'])) {
+        // Certificate of First Time Job Seeker fields
+        $employer = $_POST['employer'];
+    
+        // Insert data into the database for residency
+        $sql = "INSERT INTO residency_cert (first_name, middle_name, last_name, yrs_occupancy, address, id_pic, apply_myself)
+                VALUES ('$first_name', '$middle_name', '$last_name', '$yrs_of_occupancy', '$address', '$id_pic', '$apply_myself')";
+    
+    } else {
+        // Insert data into the database for indigency certificate with default values if assistance_type or age are not set
+        $sql = "INSERT INTO indigency_cert (first_name, middle_name, last_name, age, id_pic, assistance_type, apply_myself)
+                VALUES ('$first_name', '$middle_name', '$last_name', NULL, '$id_pic', NULL, '$apply_myself')";
     }
+    
+    
+ 
 
     // Execute the query
     if ($conn->query($sql) === TRUE) {
